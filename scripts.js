@@ -44,11 +44,6 @@ function formatNumberInString(value) {
     }
 }
 
-function changeNumberOfExpenses() {
-    const totalExpensesAmount = document.querySelectorAll(".expense-amount")
-    numberOfExpenses.textContent = totalExpensesAmount.length
-}
-
 function addProductInList(expense) {
     const liElement = document.createElement("li")
     const imgElement = document.createElement("img")
@@ -111,6 +106,14 @@ function addProductInList(expense) {
     changeNumberOfExpenses()
 }
 
+
+function changeNumberOfExpenses() {
+    const totalExpensesAmount = document.querySelectorAll(".expense-amount")
+    numberOfExpenses.textContent = totalExpensesAmount.length + ` ${
+        totalExpensesAmount.length > 1 ? "despesas" : "despesa"
+    }`
+}
+
 function calculateTotalExpenses() {
     const totalExpensesAmount = document.querySelectorAll(".expense-amount")
     let totalAmount = 0
@@ -130,8 +133,6 @@ function calculateTotalExpenses() {
     h2Element.prepend(smallElement)
     header.append(h2Element)
 }
-
-
 
 form.onsubmit = (event) => {
     event.preventDefault();
