@@ -144,6 +144,7 @@ form.onsubmit = (event) => {
     console.log(expense);
     form.reset();
     addProductInList(expense);
+    expenseName.focus();
 };
 
 
