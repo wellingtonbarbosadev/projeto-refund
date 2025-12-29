@@ -171,7 +171,7 @@ expenseAmount.addEventListener("input", (e) => {
         return;
     }
     let number = parseFloat(digits) / 100;
-    input.value = number.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }).replace("R$", "").trim();
+    input.value = "R$ " + number.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }).replace("R$", "").trim();
 });
 
 // Ao sair do campo, sempre formata
@@ -182,7 +182,7 @@ expenseAmount.addEventListener("blur", (e) => {
     value = value.replace(/\./g, "").replace(",", ".");
     let number = parseFloat(value);
     if (!isNaN(number)) {
-        input.value = number.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }).replace("R$", "").trim();
+        input.value =  "R$ " + number.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }).replace("R$", "").trim();
     }
 });
 
